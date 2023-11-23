@@ -1,9 +1,10 @@
 {
   "name": "task-manager",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000t\u0000a\u0000s\u0000k\u0000-\u0000m\u0000a\u0000n\u0000a\u0000g\u0000e\u0000r\u0000\r\u0000 \u0000",
+  "description": "�",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
