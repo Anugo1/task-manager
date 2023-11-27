@@ -4,7 +4,7 @@ const app = express()
 const tasks = require('./routes/tasks')
 const connectdb = require('./db/connect')
 const { AsyncLocalStorage } = require('async_hooks')
-
+require('dotenv').config()
 //middleware
 
 app.use(express.json())
@@ -20,7 +20,7 @@ const port = 8000
 
 const start = async () => {
     try {
-        await connectdb()
+        await connectdb(process.env.MONGO_URI)
         app.listen(port, console.log(`server is listening @ port ${port}...`))
     } catch (error) {
         console.log(error)
