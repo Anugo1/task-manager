@@ -46,6 +46,7 @@ const deleteTask = async (req, res) => {
         res.status(500).json({msg:error})  
     }
 }
+
 const updateTask = async(req, res) => {
     try {
         const {id:taskID} = req.params;
