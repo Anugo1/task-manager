@@ -18,7 +18,7 @@ app.use('/api/v1/tasks',tasks)
 app.use(notFound)
 app.use(errorHandler)
 
-const port = 8000
+const port = process.env.PORT || 8000
 
 const start = async () => {
     try {
