@@ -4,16 +4,19 @@ const tasks = require('./routes/tasks')
 const connectdb = require('./db/connect')
 require('dotenv').config()
 const notFound = require('./middlewares/not-Found')
-const { AsyncLocalStorage } = require('async_hooks')
+const errorHandler = require('./middlewares/error-handler')
+//const { AsyncLocalStorage } = require('async_hooks')
 
 
 // middleware
 //app.use(express.static('./'))
 app.use(express.json())
-app.use(notFound)
+
 
 // routes
 app.use('/api/v1/tasks',tasks)
+app.use(notFound)
+app.use(errorHandler)
 
 const port = 8000
 
